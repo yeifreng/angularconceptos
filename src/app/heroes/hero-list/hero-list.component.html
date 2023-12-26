@@ -1,0 +1,37 @@
+
+<!-- ***************************Directivas*********************************
+            *ngIf +++++++++++ *ngFor ++++++++++++ *ngIf-else
+     **********************************************************************
+-->
+
+
+<h1>
+  Listado de heroes
+</h1>
+
+<!-- Este if muestra un h3 si hay heroes eliminados -->
+<!-- Si no hay heroes eliminados muestra el ng-template -->
+<div *ngIf="deletedHero; else nothingDeleted">
+  <h3>El heroe borrado fue: {{deletedHero}}</h3>
+</div>
+<!-- Este ng-template muestra un h3 si no hay heroes eliminados aun -->
+<ng-template #nothingDeleted>
+  <h3>No has borrado ningun heroe</h3>
+</ng-template>
+
+<!-- Enlisto los heroes que tengo en el array que esta en el TS -->
+<ul>
+  <li *ngFor="let name of heroNames">
+    {{name}}
+  </li>
+</ul>
+
+
+<!-- Este if pregunta que si hay elementos en el array muestre el boton -->
+<button
+  *ngIf="heroNames.length > 0"
+  (click)="removeLastHero()">
+  Borrar ultimo heroe
+</button>
+
+
