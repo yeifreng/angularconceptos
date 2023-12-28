@@ -1,1 +1,22 @@
-<h1>DBZ personajes</h1>
+<div class="mx-4 mt-3">
+  <h1 class="">DBZ personajes</h1>
+<hr>
+<div class="row">
+  <div class="col">
+    <h4>Listado de personaje</h4>
+    <!-- Aqui creo una propiedad llamada characterList
+    ya que asi es como se llama en el TS de listComponent(componente hijo)
+  Y a esa propiedad le voy a pasar los datos que estan en el elemento padre
+que se llama characters -->
+    <app-dbz-list [characterList] = "dbzService.characters" (onDeleteId)="dbzService.onDeleteCharacter($event)" ></app-dbz-list>
+  </div>
+  <div class="col">
+    <!-- Aqui enviamos el personaje emitido desde el componente hijo
+    que seria addcharacter
+  el padre le asigna el evento para recibir lo que le esta mandando el hijo -->
+    <app-dbz-addcharacter (onNewCharacter)="dbzService.onNewCharacter($event)" ></app-dbz-addcharacter>
+
+  </div>
+</div>
+
+</div>

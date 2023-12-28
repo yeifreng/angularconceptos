@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainPageComponent } from './pages/main-page.component';
+import { DbzListComponent} from './components/list/list.component';
+import { DbzAddcharacterComponent } from './components/addcharacter/addcharacter.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 
 @NgModule({
   declarations: [
-    MainPageComponent
+    MainPageComponent,
+    DbzListComponent,
+    DbzAddcharacterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     MainPageComponent
